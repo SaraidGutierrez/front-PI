@@ -16,7 +16,7 @@ import axios from 'axios'
 export const getAllDogsfunc = ()=>{
     return async function(dispatch){
         try {
-            let getAllDogs = await axios.get(`http://localhost:3001/dogs`)
+            let getAllDogs = await axios.get(`https://beckendpi.onrender.com/dogs`)
             
             return dispatch({
                 type: GET_ALL_DOGS,
@@ -31,7 +31,7 @@ export const getAllDogsfunc = ()=>{
 export const getTemperaments = ()=>{
     return async function(dispatch){
         try {
-            let temperamen = await axios.get(`http://localhost:3001/temperaments`)
+            let temperamen = await axios.get(`https://beckendpi.onrender.com/temperaments`)
             let payload = temperamen.data
             
             
@@ -49,7 +49,7 @@ export const getTemperaments = ()=>{
 export const getDogByName = (name)=>{
     return async function(dispatch){
         try {
-            let resultadoBusqueda = await axios.get(`http://localhost:3001/dogs/name?name=${name}`)
+            let resultadoBusqueda = await axios.get(`https://beckendpi.onrender.com/dogs/name?name=${name}`)
             let payload = resultadoBusqueda.data
            
             return dispatch({
@@ -65,7 +65,7 @@ export const getDogByName = (name)=>{
 export const getDetail = (id)=>{
     return async function(dispatch){
         try {
-            let busqueda = await axios.get(`http://localhost:3001/dogs/${id}`)
+            let busqueda = await axios.get(`https://beckendpi.onrender.com/dogs/${id}`)
             let payload = busqueda.data
             
             return dispatch({
@@ -97,7 +97,7 @@ export const cleanDetail = ()=>{
 export const postDog = (newDog)=>{
     return async function(dispatch){
         try {
-             await axios.post(`http://localhost:3001/dogs`, newDog)
+             await axios.post(`https://beckendpi.onrender.com/dogs`, newDog)
 
              alert(`Successfully created dog`);
             
